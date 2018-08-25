@@ -1,0 +1,10 @@
+body {
+  background-color: lightgray;
+}
+
+.centerdiv {
+  margin: 0 auto;
+  width: 400px;
+  padding-top: 20%;
+  
+}

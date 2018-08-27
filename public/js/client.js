@@ -27,9 +27,13 @@
 
     function updateUI(responseText) {
         var response = JSON.parse(responseText);
-        var count = response.query.results.channel.lastBuildDate;
+        var title = response.query.results.channel.item.pubDate;
+        var temp = response.query.results.channel.item.condition.temp;
+        var text = response.query.results.channel.item.condition.text;
         var resBox = document.getElementById("resBox");
-        resBox.innerHTML = "<p>" + count + "</p>"
+        resBox.innerHTML = "<p>" + title + "</p>" +
+                           "<p>" + temp + "&#x2109</p>" +
+                           "<p>" + text + "</p>"  
     }
 
     function updateUIError() {
@@ -37,6 +41,5 @@
         resBox.className = "hidden";
     }
 
-    console.log(query);
     makeReq();
 })();

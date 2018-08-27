@@ -3,7 +3,8 @@
 (function() {
     var url = "https://query.yahooapis.com/v1/public/yql?q=";
     var consKey = "dj0yJmk9bUlLZ09jUE5IUm1SJmQ9WVdrOVFtaEdXbVpuTnpJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD03Mg--";
-    var query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='phoenix,az')&format=json";
+    var location = "phoenix,az";
+    var query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "')&format=json";
     var httpRequest;
 
     function makeReq() {
@@ -36,5 +37,6 @@
         resBox.className = "hidden";
     }
 
+    console.log(query);
     makeReq();
 })();

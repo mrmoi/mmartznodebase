@@ -1,5 +1,5 @@
 body {
-  background-color: lightcyan;
+  background-color: whitesmoke;
 }
 
 .centerdiv {
@@ -10,8 +10,6 @@ body {
 }
 
 .boxStyle {
-  font-size: 2.0em;
+  font-size: 1.4em;
   font-weight: bold;
-  font-family: 'Ubuntu', sans-serif;
-  color: mediumorchid;
 }

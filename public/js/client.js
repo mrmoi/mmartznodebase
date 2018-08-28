@@ -27,13 +27,21 @@
 
     function updateUI(responseText) {
         var response = JSON.parse(responseText);
-        var title = response.query.results.channel.item.pubDate;
-        var temp = response.query.results.channel.item.condition.temp;
-        var text = response.query.results.channel.item.condition.text;
-        var resBox = document.getElementById("resBox");
-        resBox.innerHTML = "<p>" + title + "</p>" +
-                           "<p>" + temp + "&#x2109</p>" +
-                           "<p>" + text + "</p>"  
+        var city = response.query.results.channel.location.city;
+        var country = response.query.results.channel.location.country;
+        var region = response.query.results.channel.location.region;
+        
+        
+        function upadateLocation() {
+            var resBox = document.getElementById("resBox");
+                resBox.innerHTML = "<p>" + city + "," + region + "," + country + "</p>"                  
+        }
+
+        
+
+
+        upadateLocation();
+
     }
 
     function updateUIError() {

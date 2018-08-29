@@ -49,12 +49,12 @@
 
         function updateCondition() {
             var conditiondiv = document.getElementById("condition");
-            conditiondiv.innerHTML = "<p>Current Temp: " + temp + "MPH, Conditions: " + sky + "</p>"                  
+            conditiondiv.innerHTML = "<p>Current Temp: " + temp + "&#8457;, Conditions: " + sky + "</p>"                  
         }
 
         function updateAtmosphere() {
             var atmospherediv = document.getElementById("atmosphere");
-            atmospherediv.innerHTML = "<p>Wind Speed: " + windspeed + ", Humidity: " + humidity + "%</p>"                  
+            atmospherediv.innerHTML = "<p>Wind Speed: " + windspeed + " MPH, Humidity: " + humidity + "%</p>"                  
         }
 
         function updateAstronomy() {

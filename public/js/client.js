@@ -27,20 +27,46 @@
 
     function updateUI(responseText) {
         var response = JSON.parse(responseText);
+        
         var city = response.query.results.channel.location.city;
         var country = response.query.results.channel.location.country;
         var region = response.query.results.channel.location.region;
+
+        var temp = response.query.results.channel.item.condition.temp;
+        var sky = response.query.results.channel.item.condition.text;
+
+        var windspeed = response.query.results.channel.wind.speed;
+        var humidity = response.query.results.channel.atmosphere.humidity;
+
+        var sunrise = response.query.results.channel.astronomy.sunrise;
+        var sunset = response.query.results.channel.astronomy.sunset;
         
         
-        function upadateLocation() {
-            var resBox = document.getElementById("resBox");
-                resBox.innerHTML = "<p>" + city + "," + region + "," + country + "</p>"                  
+        function updateLocation() {
+            var locationdiv = document.getElementById("location");
+            locationdiv.innerHTML = "<p>" + city + ", " + region + ", " + country + "</p>"                  
+        }
+
+        function updateCondition() {
+            var conditiondiv = document.getElementById("condition");
+            conditiondiv.innerHTML = "<p>Current Temp: " + temp + "MPH, Conditions: " + sky + "</p>"                  
+        }
+
+        function updateAtmosphere() {
+            var atmospherediv = document.getElementById("atmosphere");
+            atmospherediv.innerHTML = "<p>Wind Speed: " + windspeed + ", Humidity: " + humidity + "%</p>"                  
+        }
+
+        function updateAstronomy() {
+            var astronomydiv = document.getElementById("astronomy");
+            astronomydiv.innerHTML = "<p>Sunrise: " + sunrise + ", Sunset: " + sunset + "</p>"                  
         }
 
         
-
-
-        upadateLocation();
+        updateLocation();
+        updateCondition();
+        updateAtmosphere();
+        updateAstronomy();
 
     }
 
